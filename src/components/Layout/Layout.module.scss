@@ -1,0 +1,27 @@
+@use "../../styling/helpers" as *;
+
+.layout {
+  height: 100vh;
+  @include flex($direction: column);
+}
+
+.main {
+  overflow: auto;
+  flex: 1;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.wrapper {
+  width: 100%;
+  max-height: 100%;
+  @include wrapper;
+}
+
+section {
+  margin: 50px 0;
+
+  @include respond-to(tablet) {
+    margin: 30px 0;
+  }
+}

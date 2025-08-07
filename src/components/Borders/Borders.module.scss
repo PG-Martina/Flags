@@ -1,0 +1,22 @@
+@use "../../styling//helpers" as *;
+@use "../../styling//custom-variables" as *;
+
+.borders {
+  @include flex($gap: $spacing-sm, $align-items: center, $wrap: wrap);
+  margin: $spacing-xl 0;
+
+  &__country {
+    padding: $spacing-xs $spacing-md;
+    box-shadow: var(--shadow);
+    border-radius: 2px;
+  }
+
+  @include respond-to(mobile) {
+    @include flex($direction: column, $gap: $spacing-md);
+
+    &__country {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@use "../../styling/helpers" as *;
+@use "../../styling/custom-variables" as *;
+
+.flagsOverview {
+  &__list {
+    padding: 0;
+    list-style: none;
+    @include flex($wrap: wrap, $gap: 50px, $align-items: stretch);
+
+    li {
+      flex: 0 0 calc(25% - (150px / 4));
+      max-width: calc(25% - (150px / 4));
+
+      a {
+        color: var(--text);
+        text-decoration: none;
+      }
+    }
+  }
+
+  @include respond-to(tablet) {
+    &__list {
+      li {
+        flex: 0 0 calc(50% - 50px / 2);
+        max-width: calc(50% - 50px / 2);
+      }
+    }
+  }
+
+  @include respond-to(mobile) {
+    &__list {
+      li {
+        flex: 0 0 100%;
+        max-width: none;
+      }
+    }
+  }
+}

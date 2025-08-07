@@ -1,0 +1,17 @@
+@use "../../styling/helpers" as *;
+@use "../../styling/custom-variables" as *;
+@use "../../styling/typography" as *;
+
+.themeSwitcher {
+  @include button-reset;
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  cursor: pointer;
+
+  &__icon {
+    transform: rotate(140deg);
+    font-size: 18px;
+    padding: 0 4px;
+  }
+}

@@ -1,0 +1,36 @@
+@use "./custom-variables" as *;
+// Font Import
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+
+// Font Variables
+$font-family-base: "Nunito Sans", sans-serif;
+$font-weight-light: 300;
+$font-weight-semibold: 600;
+$font-weight-bold: 800;
+$font-size-body: 14px;
+
+// Typography Base
+body {
+  font-family: $font-family-base;
+  font-weight: $font-weight-light;
+  color: var(--text);
+  font-size: $font-size-body;
+  line-height: 1.5;
+}
+
+//Headers
+h1 {
+  margin: 0;
+
+  @media screen and (max-width: $mobile) {
+    font-size: 1.2em;
+  }
+}
+
+h2 {
+  margin: 0;
+}
+
+.bold {
+  font-weight: $font-weight-semibold;
+}

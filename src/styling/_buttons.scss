@@ -1,0 +1,25 @@
+@use "./helpers" as *;
+@use "./custom-variables" as *;
+@use "./typography" as *;
+
+.back-button {
+  @include flex($align-items: center, $gap: $spacing-sm);
+  text-decoration: none;
+  padding: $spacing-sm $spacing-md;
+  width: fit-content;
+  box-shadow: var(--shadow);
+  color: var(--text);
+  margin: $spacing-md 0;
+  font-size: $font-size-body;
+  background-color: var(--background);
+  position: sticky;
+  top: 50px;
+
+  .material-icons {
+    font-size: 18px;
+  }
+
+  @include respond-to(mobile) {
+    top: 30px;
+  }
+}

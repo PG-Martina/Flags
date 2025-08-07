@@ -1,0 +1,14 @@
+@use "../../styling/helpers" as *;
+@use "../../styling/custom-variables" as *;
+
+.header {
+  padding: $spacing-lg 0;
+  background-color: var(--nav-background);
+  box-shadow: var(--shadow);
+  width: 100%;
+
+  &__content {
+    @include wrapper;
+    @include flex($justify-content: space-between, $align-items: center);
+  }
+}

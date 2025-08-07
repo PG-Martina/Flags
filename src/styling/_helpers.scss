@@ -1,0 +1,54 @@
+@use "./typography" as *;
+
+// Responsive mixin
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: 480px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }
+}
+
+@mixin button-reset {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: $font-family-base;
+  font-size: $font-size-body;
+  font-weight: $font-weight-semibold;
+  color: var(--text);
+}
+
+// Layout wrapper
+@mixin wrapper {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+// Flexible box layout
+@mixin flex(
+  $direction: row,
+  $align-items: flex-start,
+  $justify-content: flex-start,
+  $gap: null,
+  $wrap: null
+) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align-items;
+  justify-content: $justify-content;
+
+  @if $gap != null {
+    gap: $gap;
+  }
+
+  @if $wrap != null {
+    flex-wrap: $wrap;
+  }
+}

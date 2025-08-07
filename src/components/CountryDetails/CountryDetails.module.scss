@@ -1,0 +1,60 @@
+@use "../../styling/helpers" as *;
+@use "../../styling/custom-variables" as *;
+
+.countryDetails {
+  @include flex($gap: 100px);
+  width: 100%;
+  margin: 80px 0;
+
+  &__image {
+    display: block;
+    flex: 1;
+    width: 100%;
+    box-shadow: var(--shadow);
+    line-height: 0;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__details {
+    flex: 1;
+  }
+
+  &__cols {
+    @include flex($justify-content: space-between, $align-items: center);
+
+    h1 {
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  &__left,
+  &__right {
+    @include flex($direction: column, $gap: $spacing-sm);
+  }
+
+  @include respond-to(tablet) {
+    @include flex($direction: column, $gap: 50px);
+
+    &__details {
+      width: 100%;
+    }
+
+    &__cols {
+      justify-content: flex-start;
+      gap: $spacing-lg;
+    }
+  }
+
+  @include respond-to(mobile) {
+    &__cols {
+      @include flex(
+        $direction: column,
+        $gap: $spacing-lg,
+        $justify-content: center
+      );
+    }
+  }
+}

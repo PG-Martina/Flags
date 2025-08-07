@@ -1,0 +1,61 @@
+@use "../../styling/custom-variables" as *;
+@use "../../styling/typography" as *;
+
+.dropdown {
+  &__indicator-separator {
+    display: none;
+  }
+
+  &__control {
+    cursor: pointer !important;
+    border: none !important;
+    box-shadow: var(--shadow) !important;
+    border-radius: 4px;
+    font-family: $font-family-base;
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-body;
+    height: 51px;
+    padding: 0 $spacing-md;
+    width: 200px;
+    background-color: var(--background) !important;
+    color: var(--text) !important;
+  }
+
+  &__value-container {
+    padding-right: $spacing-md !important;
+  }
+
+  &__placeholder,
+  &__single-value {
+    color: var(--text) !important;
+  }
+
+  &__indicator {
+    padding: 0 !important;
+    svg {
+      fill: var(--text);
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &__menu {
+    background-color: var(--background) !important;
+  }
+
+  &__menu-list {
+    padding: 0;
+  }
+
+  &__option {
+    font-family: $font-family-base;
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-body;
+    color: var(--text);
+    cursor: pointer !important;
+
+    &--is-focused {
+      color: $grey-950 !important;
+    }
+  }
+}

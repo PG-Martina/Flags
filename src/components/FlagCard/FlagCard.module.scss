@@ -1,0 +1,34 @@
+@use "../../styling/helpers" as *;
+@use "../../styling/typography" as *;
+@use "../../styling/custom-variables" as *;
+
+.flagCard {
+  width: 100%;
+  height: 100%;
+  @include flex($direction: column, $justify-content: space-between);
+  border-radius: $radius;
+  box-shadow: var(--shadow);
+  background-color: var(--nav-background);
+
+  img {
+    width: 100%;
+    border-radius: $radius $radius 0 0;
+    box-shadow: var(--shadow);
+  }
+
+  &__content {
+    padding: $spacing-lg $spacing-md;
+
+    h2 {
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  &__info {
+    @include flex($direction: column);
+  }
+
+  &__bold {
+    font-weight: $font-weight-semibold;
+  }
+}
